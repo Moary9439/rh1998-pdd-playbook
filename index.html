@@ -1,0 +1,1854 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>拼多多广告出价逻辑作战图</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f5f7fb;
+        --paper: #ffffff;
+        --ink: #172033;
+        --muted: #647084;
+        --line: #dce3ef;
+        --line-strong: #c8d3e3;
+        --blue: #1768d1;
+        --blue-soft: #eaf3ff;
+        --teal: #079c8d;
+        --teal-soft: #e7f7f3;
+        --orange: #e76f1e;
+        --orange-soft: #fff1e6;
+        --red: #d9343a;
+        --red-soft: #fff0f1;
+        --green: #148a51;
+        --green-soft: #e9f7ee;
+        --shadow: 0 20px 45px rgba(23, 32, 51, 0.08);
+        --radius: 8px;
+        --sidebar: 236px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+          "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      .app-shell {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: var(--sidebar) minmax(0, 1fr);
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        border-right: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.86);
+        backdrop-filter: blur(18px);
+        padding: 22px 18px;
+        z-index: 10;
+      }
+
+      .brand {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 24px;
+      }
+
+      .brand-mark {
+        width: 36px;
+        height: 36px;
+        display: grid;
+        place-items: center;
+        border: 1px solid #b9d3f5;
+        border-radius: var(--radius);
+        color: var(--blue);
+        background: var(--blue-soft);
+      }
+
+      .brand h1 {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.25;
+      }
+
+      .brand p {
+        margin: 2px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .nav-title {
+        margin: 20px 0 8px;
+        color: #8692a7;
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-height: 36px;
+        margin: 4px 0;
+        padding: 8px 10px;
+        border-radius: var(--radius);
+        color: #2f405b;
+        font-size: 14px;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus-visible {
+        outline: none;
+        background: #eef4fb;
+      }
+
+      .nav-link svg {
+        width: 17px;
+        height: 17px;
+        color: #61738f;
+        flex: 0 0 auto;
+      }
+
+      .note {
+        margin-top: 22px;
+        padding: 14px;
+        border: 1px solid #b9d3f5;
+        border-radius: var(--radius);
+        background: #f3f8ff;
+        color: #2d4e7c;
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      main {
+        min-width: 0;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 8;
+        min-height: 58px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 12px clamp(20px, 4vw, 54px);
+        border-bottom: 1px solid var(--line);
+        background: rgba(245, 247, 251, 0.86);
+        backdrop-filter: blur(16px);
+      }
+
+      .topbar strong {
+        font-size: 14px;
+      }
+
+      .top-actions {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .icon-button {
+        width: 38px;
+        height: 38px;
+        border: 1px solid var(--line-strong);
+        border-radius: var(--radius);
+        background: var(--paper);
+        color: #34445f;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+      }
+
+      .icon-button:hover,
+      .icon-button:focus-visible {
+        outline: none;
+        border-color: #9bb6d7;
+        background: #f8fbff;
+      }
+
+      .icon-button svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .mobile-nav {
+        display: none;
+        width: 100%;
+        overflow-x: auto;
+        gap: 8px;
+        padding: 10px 18px 0;
+      }
+
+      .mobile-nav a {
+        white-space: nowrap;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 8px 10px;
+        background: var(--paper);
+        color: #3e4e67;
+        font-size: 13px;
+      }
+
+      .page {
+        width: min(1280px, 100%);
+        margin: 0 auto;
+        padding: 34px clamp(20px, 4vw, 54px) 56px;
+      }
+
+      .section {
+        scroll-margin-top: 86px;
+        margin-top: 44px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr);
+        gap: 34px;
+        align-items: center;
+        padding: 26px 0 22px;
+      }
+
+      .hero-copy h2 {
+        margin: 0;
+        font-size: clamp(34px, 5vw, 64px);
+        line-height: 1.06;
+        letter-spacing: 0;
+      }
+
+      .hero-copy p {
+        max-width: 760px;
+        margin: 18px 0 0;
+        color: #4d5b71;
+        font-size: 18px;
+        line-height: 1.75;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .metric {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--paper);
+        padding: 14px;
+        min-height: 94px;
+      }
+
+      .metric b {
+        display: block;
+        font-size: 22px;
+        line-height: 1.1;
+      }
+
+      .metric span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .hero-visual {
+        position: relative;
+        min-height: 350px;
+        display: grid;
+        place-items: center;
+      }
+
+      .hero-visual img {
+        width: min(100%, 720px);
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+        filter: drop-shadow(0 24px 36px rgba(23, 32, 51, 0.08));
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
+      .section-head h3 {
+        margin: 0;
+        font-size: clamp(24px, 3vw, 36px);
+        line-height: 1.18;
+      }
+
+      .section-head p {
+        margin: 8px 0 0;
+        max-width: 760px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        min-height: 32px;
+        padding: 6px 10px;
+        border-radius: var(--radius);
+        border: 1px solid var(--line);
+        color: #526077;
+        background: var(--paper);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .formula-board {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .formula-strip,
+      .insight-panel,
+      .compare-card,
+      .strategy-card,
+      .timeline-card,
+      .check-panel,
+      .reason-card,
+      .calc-panel {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--paper);
+      }
+
+      .formula-strip {
+        padding: 20px;
+      }
+
+      .formula-line {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-weight: 900;
+      }
+
+      .formula-token {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--radius);
+        border: 1px solid var(--line-strong);
+        padding: 10px 14px;
+        background: #f9fbfe;
+        color: #203049;
+        text-align: center;
+      }
+
+      .formula-token.blue {
+        border-color: #a9c9f3;
+        background: var(--blue-soft);
+        color: #1456ad;
+      }
+
+      .formula-token.orange {
+        border-color: #f2bd8e;
+        background: var(--orange-soft);
+        color: #bb5215;
+      }
+
+      .operator {
+        color: #42526b;
+        font-size: 24px;
+      }
+
+      .formula-notes {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .mini-note {
+        border-left: 3px solid var(--blue);
+        padding: 10px 12px;
+        background: #f8fbff;
+        color: #40506a;
+        line-height: 1.55;
+        font-size: 14px;
+      }
+
+      .insight-panel {
+        padding: 18px;
+        display: grid;
+        gap: 10px;
+        align-content: center;
+        background: #101827;
+        color: #f7fbff;
+      }
+
+      .insight-panel b {
+        font-size: 22px;
+        line-height: 1.25;
+      }
+
+      .insight-panel p {
+        margin: 0;
+        color: #c6d1e4;
+        line-height: 1.65;
+      }
+
+      .compare-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .compare-card {
+        overflow: hidden;
+      }
+
+      .compare-top {
+        min-height: 82px;
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        padding: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .compare-card.cpa .compare-top {
+        background: linear-gradient(90deg, #eaf3ff, #ffffff);
+      }
+
+      .compare-card.roi .compare-top {
+        background: linear-gradient(90deg, #fff1e6, #ffffff);
+      }
+
+      .compare-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: var(--radius);
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+      }
+
+      .cpa .compare-icon {
+        color: var(--blue);
+        background: var(--blue-soft);
+      }
+
+      .roi .compare-icon {
+        color: var(--orange);
+        background: var(--orange-soft);
+      }
+
+      .compare-top h4 {
+        margin: 0;
+        font-size: 23px;
+        line-height: 1.2;
+      }
+
+      .compare-top p {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .compare-body {
+        padding: 18px;
+        display: grid;
+        gap: 14px;
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: 92px 1fr;
+        gap: 14px;
+        align-items: start;
+      }
+
+      .row .key {
+        color: #50607a;
+        font-weight: 800;
+      }
+
+      .row .value {
+        color: #28364e;
+        line-height: 1.65;
+      }
+
+      .value strong {
+        color: var(--ink);
+      }
+
+      .risk {
+        margin-top: 4px;
+        padding: 12px;
+        border-radius: var(--radius);
+        line-height: 1.55;
+      }
+
+      .cpa .risk {
+        background: var(--blue-soft);
+        color: #184b8d;
+      }
+
+      .roi .risk {
+        background: var(--orange-soft);
+        color: #9d4311;
+      }
+
+      .flow-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .reason-card {
+        padding: 18px;
+        min-height: 190px;
+        display: grid;
+        align-content: start;
+        gap: 12px;
+      }
+
+      .reason-card .num {
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border-radius: var(--radius);
+        background: #eff4fb;
+        color: #35506f;
+        font-weight: 900;
+      }
+
+      .reason-card h4 {
+        margin: 0;
+        font-size: 20px;
+      }
+
+      .reason-card p {
+        margin: 0;
+        color: #526077;
+        line-height: 1.7;
+      }
+
+      .sku-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.72fr);
+        gap: 18px;
+        align-items: flex-start;
+      }
+
+      .sku-ladder {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        align-self: flex-start;
+      }
+
+      .sku-card {
+        position: relative;
+        min-height: 230px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--paper);
+        padding: 18px;
+        overflow: hidden;
+      }
+
+      .sku-card::after {
+        content: "";
+        position: absolute;
+        inset: auto -18px -38px auto;
+        width: 116px;
+        height: 116px;
+        border-radius: 50%;
+        background: rgba(23, 104, 209, 0.08);
+      }
+
+      .sku-card.hot::after {
+        background: rgba(231, 111, 30, 0.13);
+      }
+
+      .sku-name {
+        color: var(--muted);
+        font-weight: 800;
+      }
+
+      .sku-price {
+        margin-top: 12px;
+        font-size: 42px;
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      .sku-desc {
+        margin-top: 12px;
+        color: #526077;
+        line-height: 1.6;
+      }
+
+      .bid-chip {
+        display: inline-flex;
+        margin-top: 16px;
+        padding: 8px 10px;
+        border-radius: var(--radius);
+        background: #f4f7fb;
+        color: #364965;
+        font-weight: 800;
+      }
+
+      .hot .bid-chip {
+        background: var(--orange-soft);
+        color: #a34712;
+      }
+
+      .calc-panel {
+        padding: 18px;
+      }
+
+      .calc-panel h4 {
+        margin: 0 0 14px;
+        font-size: 20px;
+      }
+
+      .calc-controls {
+        display: grid;
+        gap: 14px;
+      }
+
+      .control {
+        display: grid;
+        gap: 7px;
+      }
+
+      .control label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        color: #43536f;
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .control output {
+        color: var(--ink);
+        font-variant-numeric: tabular-nums;
+      }
+
+      input[type="range"] {
+        width: 100%;
+        accent-color: var(--teal);
+      }
+
+      input[type="number"] {
+        width: 100%;
+        min-height: 38px;
+        border: 1px solid var(--line-strong);
+        border-radius: var(--radius);
+        padding: 8px 10px;
+        background: #fbfcfe;
+        color: var(--ink);
+        font-size: 14px;
+      }
+
+      input[type="number"]:focus {
+        outline: 2px solid rgba(7, 156, 141, 0.18);
+        border-color: var(--teal);
+      }
+
+      .calc-result {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .calc-result div {
+        min-height: 88px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 12px;
+        background: #fbfcfe;
+      }
+
+      .calc-result b {
+        display: block;
+        font-size: 20px;
+      }
+
+      .calc-result span {
+        display: block;
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .coupon-box {
+        margin-top: 14px;
+        border: 1px dashed #f0a466;
+        border-radius: var(--radius);
+        background: var(--orange-soft);
+        color: #8b3e11;
+        padding: 12px;
+        line-height: 1.6;
+      }
+
+      .roi-calculator {
+        margin-top: 18px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+      }
+
+      .roi-calculator h5 {
+        margin: 0;
+        font-size: 18px;
+        line-height: 1.3;
+      }
+
+      .roi-calculator > p {
+        margin: 8px 0 14px;
+        color: var(--muted);
+        line-height: 1.6;
+        font-size: 14px;
+      }
+
+      .segmented {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+
+      .segment-button {
+        min-height: 42px;
+        border: 1px solid var(--line-strong);
+        border-radius: var(--radius);
+        background: #fbfcfe;
+        color: #3d4d68;
+        cursor: pointer;
+        font-weight: 800;
+      }
+
+      .segment-button[aria-pressed="true"] {
+        border-color: #f0a466;
+        background: var(--orange-soft);
+        color: #9d4311;
+      }
+
+      .number-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .number-control {
+        display: grid;
+        gap: 6px;
+      }
+
+      .number-control label {
+        color: #43536f;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .roi-results {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .roi-result {
+        min-height: 86px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 12px;
+        background: #fbfcfe;
+      }
+
+      .roi-result b {
+        display: block;
+        font-size: 21px;
+        line-height: 1.2;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .roi-result span {
+        display: block;
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      .roi-status {
+        margin-top: 10px;
+        border-radius: var(--radius);
+        padding: 12px;
+        border: 1px solid #b8dfc8;
+        background: var(--green-soft);
+        color: #16633d;
+        line-height: 1.6;
+        font-weight: 800;
+      }
+
+      .roi-status.warning {
+        border-color: #f0cf9b;
+        background: #fff8e6;
+        color: #8b5a11;
+      }
+
+      .roi-status.danger {
+        border-color: #f1bdc1;
+        background: var(--red-soft);
+        color: #9d252a;
+      }
+
+      .strategy-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .strategy-card {
+        padding: 18px;
+        display: grid;
+        align-content: start;
+        gap: 12px;
+        min-height: 254px;
+      }
+
+      .strategy-card h4 {
+        margin: 0;
+        font-size: 19px;
+        line-height: 1.32;
+      }
+
+      .strategy-card p {
+        margin: 0;
+        color: #536178;
+        line-height: 1.7;
+      }
+
+      .strategy-card b {
+        color: var(--ink);
+      }
+
+      .strategy-label {
+        width: max-content;
+        max-width: 100%;
+        border-radius: var(--radius);
+        padding: 6px 8px;
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .label-best {
+        background: var(--green-soft);
+        color: var(--green);
+      }
+
+      .label-strong {
+        background: var(--blue-soft);
+        color: var(--blue);
+      }
+
+      .label-risk {
+        background: var(--red-soft);
+        color: var(--red);
+      }
+
+      .sop {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .timeline-card {
+        padding: 16px;
+        min-height: 238px;
+        display: grid;
+        align-content: start;
+        gap: 12px;
+      }
+
+      .timeline-card .time {
+        display: inline-flex;
+        width: max-content;
+        padding: 6px 9px;
+        border-radius: var(--radius);
+        background: #eef4fb;
+        color: #30445f;
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .timeline-card h4 {
+        margin: 0;
+        font-size: 19px;
+      }
+
+      .timeline-card ul,
+      .check-panel ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 8px;
+      }
+
+      .timeline-card li,
+      .check-panel li {
+        position: relative;
+        padding-left: 18px;
+        color: #526077;
+        line-height: 1.55;
+        font-size: 14px;
+      }
+
+      .timeline-card li::before,
+      .check-panel li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.65em;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--teal);
+      }
+
+      .decision {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 14px;
+      }
+
+      .check-panel {
+        padding: 18px;
+      }
+
+      .check-panel.success {
+        background: var(--green-soft);
+        border-color: #b8dfc8;
+      }
+
+      .check-panel.fail {
+        background: var(--red-soft);
+        border-color: #f1bdc1;
+      }
+
+      .check-panel h4 {
+        margin: 0 0 12px;
+        font-size: 20px;
+      }
+
+      .diff-table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        border-radius: var(--radius);
+        background: var(--paper);
+        border: 1px solid var(--line);
+      }
+
+      .diff-table th,
+      .diff-table td {
+        padding: 14px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+        line-height: 1.6;
+      }
+
+      .diff-table th {
+        background: #eef4fb;
+        color: #34445f;
+        font-size: 14px;
+      }
+
+      .diff-table tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .diff-table strong {
+        color: var(--ink);
+      }
+
+      .final-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+        gap: 18px;
+      }
+
+      .memory-card {
+        border-radius: var(--radius);
+        padding: 22px;
+        background: #101827;
+        color: #f8fbff;
+      }
+
+      .memory-card h3 {
+        margin: 0;
+        font-size: 26px;
+      }
+
+      .memory-card p {
+        margin: 12px 0 0;
+        color: #c9d2df;
+        line-height: 1.75;
+      }
+
+      .operator-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .operator-item {
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 12px;
+        align-items: start;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--paper);
+        padding: 14px;
+      }
+
+      .operator-item b {
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: var(--radius);
+        background: var(--teal-soft);
+        color: var(--teal);
+      }
+
+      .operator-item strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .operator-item span {
+        color: #526077;
+        line-height: 1.55;
+      }
+
+      .print-note {
+        margin-top: 24px;
+        border-top: 1px solid var(--line);
+        padding-top: 18px;
+        color: #7a8799;
+        font-size: 13px;
+      }
+
+      @media (max-width: 1120px) {
+        .app-shell {
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          display: none;
+        }
+
+        .mobile-nav {
+          display: flex;
+        }
+
+        .hero,
+        .formula-board,
+        .sku-layout,
+        .final-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-visual {
+          min-height: 260px;
+        }
+
+        .strategy-grid,
+        .sop {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 760px) {
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .page {
+          padding-inline: 16px;
+          padding-top: 22px;
+        }
+
+        .hero-stats,
+        .formula-notes,
+        .compare-grid,
+        .flow-grid,
+        .sku-ladder,
+        .strategy-grid,
+        .sop,
+        .decision,
+        .calc-result,
+        .number-grid,
+        .roi-results {
+          grid-template-columns: 1fr;
+        }
+
+        .section-head {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .hero-copy h2 {
+          font-size: 36px;
+        }
+
+        .hero-copy p {
+          font-size: 16px;
+        }
+
+        .formula-token {
+          flex: 1 1 42%;
+        }
+
+        .row {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+
+        .diff-table {
+          display: block;
+          overflow-x: auto;
+        }
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+
+        .sidebar,
+        .topbar,
+        .mobile-nav,
+        .icon-button {
+          display: none;
+        }
+
+        .app-shell {
+          display: block;
+        }
+
+        .page {
+          width: 100%;
+          padding: 0;
+        }
+
+        .section {
+          break-inside: avoid;
+        }
+
+        .compare-card,
+        .strategy-card,
+        .timeline-card,
+        .check-panel,
+        .reason-card,
+        .calc-panel,
+        .formula-strip {
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="页面导航">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 18V8.5L12 4l8 4.5V18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" stroke="currentColor" stroke-width="1.8" />
+              <path d="M9 20v-6h6v6" stroke="currentColor" stroke-width="1.8" />
+            </svg>
+          </div>
+          <div>
+            <h1>出价逻辑作战图</h1>
+            <p>CPA / ROI / SKU / SOP</p>
+          </div>
+        </div>
+
+        <div class="nav-title">核心知识</div>
+        <a class="nav-link" href="#formula">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 7h14M5 12h10M5 17h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+          eCPM 底层公式
+        </a>
+        <a class="nav-link" href="#compare">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6 5v14M18 5v14M6 8h12M6 16h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+          CPA 与 ROI 对比
+        </a>
+        <a class="nav-link" href="#sku">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16v13H4zM8 7a4 4 0 0 1 8 0" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /></svg>
+          SKU 梯队与券
+        </a>
+        <a class="nav-link" href="#roi-calculator">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1ZM8 7h8M8 11h2M12 11h4M8 15h2M12 15h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+          ROI 计算器
+        </a>
+        <a class="nav-link" href="#strategy">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 16l5-5 4 4 7-8M4 20h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          CPA 保高客单
+        </a>
+
+        <div class="nav-title">实战 SOP</div>
+        <a class="nav-link" href="#rescue">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18M7 7l10 10M17 7 7 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+          掉量抢救
+        </a>
+        <a class="nav-link" href="#variance">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 19V5M5 19h14M8 15l3-4 3 2 4-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          计划与实际偏差
+        </a>
+        <a class="nav-link" href="#checklist">
+          <svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6M5 20h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          员工执行清单
+        </a>
+
+        <div class="note">
+          一句话记住：CPA 追求“稳定拿单”，ROI 追求“更高成交金额”。最终都要回到 eCPM 竞价能力。
+        </div>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <strong>拼多多广告出价逻辑可视化培训页</strong>
+          <div class="top-actions">
+            <span class="tag">适合投屏讲解</span>
+            <span class="tag">适合新员工培训</span>
+            <button class="icon-button" type="button" onclick="window.print()" aria-label="打印页面" title="打印页面">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 8V4h10v4M7 18H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 14h10v6H7z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /></svg>
+            </button>
+          </div>
+        </header>
+
+        <nav class="mobile-nav" aria-label="移动端导航">
+          <a href="#formula">公式</a>
+          <a href="#compare">CPA/ROI</a>
+          <a href="#sku">SKU</a>
+          <a href="#roi-calculator">计算器</a>
+          <a href="#strategy">策略</a>
+          <a href="#rescue">抢救</a>
+          <a href="#variance">偏差</a>
+        </nav>
+
+        <div class="page">
+          <section class="hero">
+            <div class="hero-copy">
+              <h2>拼多多广告出价逻辑作战图</h2>
+              <p>
+                把“成交出价”和“目标投产比”拆成一张能执行的图：平台用 eCPM 分配流量，系统把你的 CPA 或 ROI 折算成隐形出价，再根据点击率、转化率、客单价决定给谁曝光。
+              </p>
+              <div class="hero-stats" aria-label="关键结论">
+                <div class="metric">
+                  <b>CPA</b>
+                  <span>稳量更强，容易跑向阻力最小的低客单成交。</span>
+                </div>
+                <div class="metric">
+                  <b>ROI</b>
+                  <span>能拉高客单，但对人群池和转化率更脆弱。</span>
+                </div>
+                <div class="metric">
+                  <b>SKU + 券</b>
+                  <span>决定算法最终把流量推向一盒、两盒还是多盒装。</span>
+                </div>
+              </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+              <img src="assets/pdd-auction-flow.png" alt="" />
+            </div>
+          </section>
+
+          <section class="section" id="formula">
+            <div class="section-head">
+              <div>
+                <h3>1. 底层公式：谁的 eCPM 高，谁拿流量</h3>
+                <p>
+                  平台不直接看你“想要什么”，而是把你的目标换算成一次曝光能带来的预期广告收益。这个结果越高，竞价越有胜算。
+                </p>
+              </div>
+              <span class="tag">流量分配标尺</span>
+            </div>
+
+            <div class="formula-board">
+              <div class="formula-strip">
+                <div class="formula-line" aria-label="eCPM公式">
+                  <span class="formula-token">eCPM</span>
+                  <span class="operator">=</span>
+                  <span class="formula-token orange">隐形出价</span>
+                  <span class="operator">×</span>
+                  <span class="formula-token blue">eCTR<br />预估点击率</span>
+                  <span class="operator">×</span>
+                  <span class="formula-token blue">eCVR<br />预估转化率</span>
+                  <span class="operator">×</span>
+                  <span class="formula-token">1000</span>
+                </div>
+                <div class="formula-notes">
+                  <div class="mini-note"><strong>CPA 模式：</strong>隐形出价接近你设定的成交出价。</div>
+                  <div class="mini-note"><strong>ROI 模式：</strong>隐形出价 = 预估客单价 ÷ 目标 ROI。</div>
+                  <div class="mini-note"><strong>操作重点：</strong>能动的不是公式，是 SKU 结构、券、主图、价格锚点和人群承接。</div>
+                </div>
+              </div>
+              <div class="insight-panel">
+                <b>平台在做什么？</b>
+                <p>
+                  它会把每个用户的“可能点击、可能下单、可能买多少钱”预估出来，再决定这次曝光值不值得给你。
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="section" id="compare">
+            <div class="section-head">
+              <div>
+                <h3>2. 两种出价模式，本质是两种算法指令</h3>
+                <p>
+                  成交出价告诉系统“我愿意为一单付多少钱”；目标投产比告诉系统“我愿意用多少广告费换多少成交金额”。
+                </p>
+              </div>
+            </div>
+
+            <div class="compare-grid">
+              <article class="compare-card cpa">
+                <div class="compare-top">
+                  <div class="compare-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 21a9 9 0 1 0-9-9h4a5 5 0 1 1 5 5v4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+                  </div>
+                  <div>
+                    <h4>CPA 成交出价</h4>
+                    <p>追求稳定成交成本和长期跑量</p>
+                  </div>
+                </div>
+                <div class="compare-body">
+                  <div class="row">
+                    <div class="key">公式</div>
+                    <div class="value">eCPM = 成交出价 × eCTR × eCVR × 1000</div>
+                  </div>
+                  <div class="row">
+                    <div class="key">算法动作</div>
+                    <div class="value">寻找最容易成交的人群，优先走阻力最小的下单路径。</div>
+                  </div>
+                  <div class="row">
+                    <div class="key">适合</div>
+                    <div class="value">新品破零、基础销量、利润绝对值相对稳定的商品。</div>
+                  </div>
+                  <div class="risk">
+                    风险：多 SKU 链接里，系统容易把流量推向 14.5 元一盒装，订单多但客单价低。
+                  </div>
+                </div>
+              </article>
+
+              <article class="compare-card roi">
+                <div class="compare-top">
+                  <div class="compare-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V5M4 19h16M7 15l3-4 3 2 5-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /><path d="M17 6h3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+                  </div>
+                  <div>
+                    <h4>Target ROI 目标投产比</h4>
+                    <p>追求成交金额、利润率和高客单</p>
+                  </div>
+                </div>
+                <div class="compare-body">
+                  <div class="row">
+                    <div class="key">公式</div>
+                    <div class="value">隐形出价 = 预估客单价 ÷ 目标 ROI</div>
+                  </div>
+                  <div class="row">
+                    <div class="key">算法动作</div>
+                    <div class="value">寻找会买更多、能触发券门槛、客单价更高的人群。</div>
+                  </div>
+                  <div class="row">
+                    <div class="key">适合</div>
+                    <div class="value">多盒装、客单价波动大、需要利润放大的成熟链接。</div>
+                  </div>
+                  <div class="risk">
+                    风险：高净值人群池小，CVR 一旦下滑，eCPM 腰斩，展现容易掉。
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-head">
+              <div>
+                <h3>3. 为什么 CPA 客单低，ROI 客单高但容易掉量</h3>
+                <p>
+                  这不是玄学，而是算法 KPI 发生了变化。CPA 看“能不能快点成交”，ROI 还要看“成交金额够不够高”。
+                </p>
+              </div>
+            </div>
+            <div class="flow-grid">
+              <article class="reason-card">
+                <div class="num">01</div>
+                <h4>CPA 会走低阻力路径</h4>
+                <p>14.5 元一盒装购买门槛低，天然 CVR 高。系统为了稳稳赚到 CPA 广告费，会优先找图便宜、试水型用户。</p>
+              </article>
+              <article class="reason-card">
+                <div class="num">02</div>
+                <h4>ROI 会放大高客单价值</h4>
+                <p>34.5 元三盒装在 ROI=3 时，隐形出价可到 11.5 元，高于一盒装的 4.8 元，竞价能力更强。</p>
+              </article>
+              <article class="reason-card">
+                <div class="num">03</div>
+                <h4>优惠券会扭转转化率</h4>
+                <p>满 30 减 5 这类券只让 34.5 元 SKU 触发。用户算完单盒成本后，多盒装 CVR 可能瞬间反超。</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="sku">
+            <div class="section-head">
+              <div>
+                <h3>4. SKU 梯队：把价格、券和隐形出价放在一张图里</h3>
+                <p>
+                  用这个小计算器给员工演示：目标 ROI 越低，系统越愿意出价；客单价越高，ROI 模式下隐形出价越高。
+                </p>
+              </div>
+              <span class="tag">默认 ROI = 3.0</span>
+            </div>
+
+            <div class="sku-layout">
+              <div class="sku-ladder" aria-label="SKU梯队">
+                <article class="sku-card">
+                  <div class="sku-name">一盒装 / 引流款</div>
+                  <div class="sku-price">¥14.5</div>
+                  <div class="sku-desc">价格门槛低，CPA 最容易先跑动，但会拉低整体客单价。</div>
+                  <div class="bid-chip" id="bid-one">ROI 隐形出价 ¥4.8</div>
+                </article>
+                <article class="sku-card">
+                  <div class="sku-name">两盒装 / 承接款</div>
+                  <div class="sku-price">¥24.5</div>
+                  <div class="sku-desc">适合承接有需求但暂时不想囤货的人群，也能做价格锚点。</div>
+                  <div class="bid-chip" id="bid-two">ROI 隐形出价 ¥8.2</div>
+                </article>
+                <article class="sku-card hot">
+                  <div class="sku-name">三盒装 / 高利润款</div>
+                  <div class="sku-price">¥34.5</div>
+                  <div class="sku-desc">最容易触发满减门槛，适合用 ROI 或券去放大高客单转化。</div>
+                  <div class="bid-chip" id="bid-three">ROI 隐形出价 ¥11.5</div>
+                </article>
+              </div>
+
+              <aside class="calc-panel" aria-label="出价计算器">
+                <h4>隐形出价与券门槛</h4>
+                <div class="calc-controls">
+                  <div class="control">
+                    <label for="roi-range">目标 ROI <output id="roi-output">3.0</output></label>
+                    <input id="roi-range" type="range" min="1.6" max="5" value="3" step="0.1" />
+                  </div>
+                  <div class="control">
+                    <label for="coupon-range">满减券金额 <output id="coupon-output">¥5</output></label>
+                    <input id="coupon-range" type="range" min="0" max="10" value="5" step="1" />
+                  </div>
+                </div>
+                <div class="calc-result">
+                  <div><b id="one-unit">¥14.5</b><span>一盒单盒成本</span></div>
+                  <div><b id="two-unit">¥12.3</b><span>两盒单盒成本</span></div>
+                  <div><b id="three-unit">¥9.8</b><span>三盒用券后单盒成本</span></div>
+                </div>
+                <div class="coupon-box" id="coupon-note">
+                  当券金额为 ¥5 时，三盒装实付 ¥29.5，单盒约 ¥9.8，比直接买一盒更有“占便宜”的感知。
+                </div>
+
+                <div class="roi-calculator" id="roi-calculator" aria-label="ROI利润计算器">
+                  <h5>ROI 利润计算器</h5>
+                  <p>选择 SKU 后填成本，直接判断目标 ROI 能不能覆盖广告费和履约成本。</p>
+
+                  <div class="segmented" role="group" aria-label="选择SKU">
+                    <button class="segment-button" type="button" data-sku="one" aria-pressed="false">一盒</button>
+                    <button class="segment-button" type="button" data-sku="two" aria-pressed="false">两盒</button>
+                    <button class="segment-button" type="button" data-sku="three" aria-pressed="true">三盒</button>
+                  </div>
+
+                  <div class="number-grid">
+                    <div class="number-control">
+                      <label for="sale-price">SKU 售价</label>
+                      <input id="sale-price" type="number" min="0" step="0.1" value="34.5" inputmode="decimal" />
+                    </div>
+                    <div class="number-control">
+                      <label for="coupon-threshold">券门槛</label>
+                      <input id="coupon-threshold" type="number" min="0" step="1" value="30" inputmode="decimal" />
+                    </div>
+                    <div class="number-control">
+                      <label for="goods-cost">商品成本</label>
+                      <input id="goods-cost" type="number" min="0" step="0.1" value="15" inputmode="decimal" />
+                    </div>
+                    <div class="number-control">
+                      <label for="ship-cost">运费/履约</label>
+                      <input id="ship-cost" type="number" min="0" step="0.1" value="3" inputmode="decimal" />
+                    </div>
+                    <div class="number-control">
+                      <label for="other-cost">平台/售后等</label>
+                      <input id="other-cost" type="number" min="0" step="0.1" value="0" inputmode="decimal" />
+                    </div>
+                    <div class="number-control">
+                      <label for="target-orders">计划订单数</label>
+                      <input id="target-orders" type="number" min="1" step="1" value="100" inputmode="numeric" />
+                    </div>
+                  </div>
+
+                  <div class="roi-results">
+                    <div class="roi-result"><b id="paid-gmv">¥29.5</b><span>用券后实付 GMV</span></div>
+                    <div class="roi-result"><b id="ad-budget">¥9.8</b><span>目标 ROI 下单均广告费</span></div>
+                    <div class="roi-result"><b id="break-even-roi">2.57</b><span>保本 ROI</span></div>
+                    <div class="roi-result"><b id="net-profit">¥1.7</b><span>扣广告后单均净利</span></div>
+                    <div class="roi-result"><b id="max-cpa">¥11.5</b><span>保本 CPA 上限</span></div>
+                    <div class="roi-result"><b id="batch-profit">¥170</b><span>计划订单总净利</span></div>
+                  </div>
+                  <div class="roi-status" id="roi-status">安全：当前目标 ROI 高于保本 ROI，理论上能覆盖广告费。</div>
+                </div>
+              </aside>
+            </div>
+          </section>
+
+          <section class="section" id="strategy">
+            <div class="section-head">
+              <div>
+                <h3>5. 用 CPA 保住高客单：核心是让多盒装更容易成交</h3>
+                <p>
+                  CPA 本身不会主动帮你追高客单。要让它跑高客单，必须人为改变用户选择路径，让多盒装成为更高转化率选项。
+                </p>
+              </div>
+            </div>
+
+            <div class="strategy-grid">
+              <article class="strategy-card">
+                <span class="strategy-label label-best">最推荐</span>
+                <h4>阶梯定向券</h4>
+                <p><b>满 30 减 5</b> 让 34.5 元三盒装触发门槛。用户感知是多买更便宜，算法看到的是多盒装 CVR 被拉高。</p>
+              </article>
+              <article class="strategy-card">
+                <span class="strategy-label label-strong">最稳</span>
+                <h4>物理隔离链接</h4>
+                <p>老链接保留 14.5 元引流，新链接从 24.5 元起步，再用 CPA 跑。系统没法继续偏向一盒装。</p>
+              </article>
+              <article class="strategy-card">
+                <span class="strategy-label label-strong">视觉引导</span>
+                <h4>SKU 命名与主图</h4>
+                <p>一盒装做“单盒试用”，三盒装做“周期装/店长推荐”。让用户进详情后自然走向高客单。</p>
+              </article>
+              <article class="strategy-card">
+                <span class="strategy-label label-risk">谨慎微操</span>
+                <h4>动态库存拦截</h4>
+                <p>高峰期低价 SKU 少库存或慢发货，高客单 SKU 现货秒发。适合短时校正模型，不适合长期依赖。</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="rescue">
+            <div class="section-head">
+              <div>
+                <h3>6. 从全店托管 ROI 切回标准推广 CPA 后，展现腰斩怎么办</h3>
+                <p>
+                  这是典型的“权重断层”。全店托管给过强推流，切回 CPA 后，如果 CPA 买不起原来那批高净值人群，eCPM 会瞬间不够。
+                </p>
+              </div>
+              <span class="tag">黄金 48 小时</span>
+            </div>
+
+            <div class="sop">
+              <article class="timeline-card">
+                <span class="time">0-4 小时</span>
+                <h4>先抢回竞价权</h4>
+                <ul>
+                  <li>CPA 出价上调 30%-50%</li>
+                  <li>先看展现是否回温</li>
+                  <li>不要立刻反复切回托管</li>
+                </ul>
+              </article>
+              <article class="timeline-card">
+                <span class="time">4-24 小时</span>
+                <h4>锁定高价值人群</h4>
+                <ul>
+                  <li>相似商品核心人群加溢价</li>
+                  <li>店铺老客、加购未购定向</li>
+                  <li>资源位溢价谨慎开启</li>
+                </ul>
+              </article>
+              <article class="timeline-card">
+                <span class="time">24-48 小时</span>
+                <h4>用券拉高 CVR</h4>
+                <ul>
+                  <li>给近 7 天加购未购发暗券</li>
+                  <li>客服催付配合限时权益</li>
+                  <li>让系统重新看到转化率</li>
+                </ul>
+              </article>
+              <article class="timeline-card">
+                <span class="time">48 小时后</span>
+                <h4>判断承接结果</h4>
+                <ul>
+                  <li>恢复到原展现 80% 以上再降价</li>
+                  <li>每天只降 0.5-1 元</li>
+                  <li>连续失效就回 ROI 重新养模型</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="decision">
+              <div class="check-panel success">
+                <h4>抢救成功信号</h4>
+                <ul>
+                  <li>展现恢复到腰斩前 80% 以上</li>
+                  <li>成交仍集中在多盒装或高客单 SKU</li>
+                  <li>实际 CPA 开始向目标价靠拢</li>
+                </ul>
+              </div>
+              <div class="check-panel fail">
+                <h4>需要止损信号</h4>
+                <ul>
+                  <li>高出价仍没有展现</li>
+                  <li>有展现但只出低价 SKU</li>
+                  <li>转化率连续两天接不住</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="section" id="variance">
+            <div class="section-head">
+              <div>
+                <h3>7. 计划与实际有差距：先判断偏低还是偏高</h3>
+                <p>
+                  计划值是算法基于预估下的目标，实际值是真实消费者行为。只看单日容易误判，至少看 3-7 天滚动均值。
+                </p>
+              </div>
+            </div>
+
+            <table class="diff-table">
+              <thead>
+                <tr>
+                  <th>场景</th>
+                  <th>实际偏低</th>
+                  <th>实际偏高</th>
+                  <th>处理原则</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>CPA</strong><br />设 28，实际 30</td>
+                  <td>eCVR 失真、转化延迟、冷启动试错、人群或资源位溢价叠加。</td>
+                  <td>遇到高 CVR 流量池，或者同样成本带来更多连带成交。</td>
+                  <td>7% 左右属于正常波动；不要因为 2 元差距频繁改价。</td>
+                </tr>
+                <tr>
+                  <td><strong>ROI</strong><br />设 1.6，实际 1.35</td>
+                  <td>竞品冲击、差评、券过期、低价 SKU 吞噬、平台保量优先或探索期交学费。</td>
+                  <td>连带购买爆发、历史加购集中付款、模型过于保守导致只吃精准人群。</td>
+                  <td>先看 3-7 天均值。连续 3 天偏低，再排查 CVR 和 AOV。</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section class="section" id="checklist">
+            <div class="section-head">
+              <div>
+                <h3>8. 员工执行清单：每天照这套顺序看</h3>
+                <p>
+                  遇到掉量、客单下降、投产偏差，不要第一反应乱改出价。先找是哪一环坏了，再决定动价格、券、SKU 还是人群。
+                </p>
+              </div>
+            </div>
+
+            <div class="final-grid">
+              <div class="memory-card">
+                <h3>一页记住</h3>
+                <p>
+                  CPA 稳定但会偏向低阻力成交；ROI 能拉客单但容易因为人群池、竞品、券和转化率波动而掉量。多盒装想跑稳，关键不是只改出价，而是让高客单 SKU 在用户眼里更划算，在算法眼里更容易成交。
+                </p>
+              </div>
+              <div class="operator-list">
+                <div class="operator-item">
+                  <b>1</b>
+                  <span><strong>先拆公式</strong>展现少看 eCPM，点击少看 CTR，成交少看 CVR，金额低看 AOV。</span>
+                </div>
+                <div class="operator-item">
+                  <b>2</b>
+                  <span><strong>再看 SKU</strong>14.5、24.5、34.5 是否被算法跑偏；低价款是否吞噬高价款。</span>
+                </div>
+                <div class="operator-item">
+                  <b>3</b>
+                  <span><strong>再查券和竞品</strong>平台券、店铺券、竞品降价、差评置顶都会直接改变 CVR。</span>
+                </div>
+                <div class="operator-item">
+                  <b>4</b>
+                  <span><strong>最后动出价</strong>CPA 和 ROI 都小步微调，避免频繁修改导致模型重学。</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="print-note">
+              内容来源：根据《Gemini - 拼多多成交出价与目标投产比逻辑_2026-06-28_18-47-48.md》整理为员工培训网页。
+            </p>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const roiRange = document.getElementById("roi-range");
+      const couponRange = document.getElementById("coupon-range");
+      const roiOutput = document.getElementById("roi-output");
+      const couponOutput = document.getElementById("coupon-output");
+      const bidOne = document.getElementById("bid-one");
+      const bidTwo = document.getElementById("bid-two");
+      const bidThree = document.getElementById("bid-three");
+      const oneUnit = document.getElementById("one-unit");
+      const twoUnit = document.getElementById("two-unit");
+      const threeUnit = document.getElementById("three-unit");
+      const couponNote = document.getElementById("coupon-note");
+      const skuButtons = document.querySelectorAll("[data-sku]");
+      const salePriceInput = document.getElementById("sale-price");
+      const couponThresholdInput = document.getElementById("coupon-threshold");
+      const goodsCostInput = document.getElementById("goods-cost");
+      const shipCostInput = document.getElementById("ship-cost");
+      const otherCostInput = document.getElementById("other-cost");
+      const targetOrdersInput = document.getElementById("target-orders");
+      const paidGmv = document.getElementById("paid-gmv");
+      const adBudget = document.getElementById("ad-budget");
+      const breakEvenRoi = document.getElementById("break-even-roi");
+      const netProfit = document.getElementById("net-profit");
+      const maxCpa = document.getElementById("max-cpa");
+      const batchProfit = document.getElementById("batch-profit");
+      const roiStatus = document.getElementById("roi-status");
+
+      const prices = {
+        one: 14.5,
+        two: 24.5,
+        three: 34.5
+      };
+
+      let selectedSku = "three";
+
+      function yuan(value) {
+        return `¥${Number(value).toFixed(1)}`;
+      }
+
+      function numberFrom(input, fallback = 0) {
+        const value = Number(input.value);
+        return Number.isFinite(value) ? value : fallback;
+      }
+
+      function updateCalculator() {
+        const roi = Number(roiRange.value);
+        const coupon = Number(couponRange.value);
+        const threePaid = Math.max(0, prices.three - coupon);
+        const salePrice = Math.max(0, numberFrom(salePriceInput, prices[selectedSku]));
+        const threshold = Math.max(0, numberFrom(couponThresholdInput, 30));
+        const availableCoupon = salePrice >= threshold ? coupon : 0;
+        const paid = Math.max(0, salePrice - availableCoupon);
+        const goodsCost = Math.max(0, numberFrom(goodsCostInput, 0));
+        const shipCost = Math.max(0, numberFrom(shipCostInput, 0));
+        const otherCost = Math.max(0, numberFrom(otherCostInput, 0));
+        const orders = Math.max(1, Math.round(numberFrom(targetOrdersInput, 1)));
+        const preAdProfit = paid - goodsCost - shipCost - otherCost;
+        const adPerOrder = roi > 0 ? paid / roi : 0;
+        const profit = preAdProfit - adPerOrder;
+        const breakEven = preAdProfit > 0 ? paid / preAdProfit : Infinity;
+
+        roiOutput.value = roi.toFixed(1);
+        couponOutput.value = `¥${coupon.toFixed(0)}`;
+        bidOne.textContent = `ROI 隐形出价 ${yuan(prices.one / roi)}`;
+        bidTwo.textContent = `ROI 隐形出价 ${yuan(prices.two / roi)}`;
+        bidThree.textContent = `ROI 隐形出价 ${yuan(prices.three / roi)}`;
+        oneUnit.textContent = yuan(prices.one);
+        twoUnit.textContent = yuan(prices.two / 2);
+        threeUnit.textContent = yuan(threePaid / 3);
+        couponNote.textContent = `当券金额为 ¥${coupon.toFixed(0)} 时，三盒装实付 ${yuan(threePaid)}，单盒约 ${yuan(threePaid / 3)}。券越能卡住高客单门槛，越容易让多盒装 CVR 反超。`;
+        paidGmv.textContent = yuan(paid);
+        adBudget.textContent = yuan(adPerOrder);
+        breakEvenRoi.textContent = Number.isFinite(breakEven) ? breakEven.toFixed(2) : "无保本";
+        netProfit.textContent = yuan(profit);
+        maxCpa.textContent = preAdProfit > 0 ? yuan(preAdProfit) : "亏损";
+        batchProfit.textContent = yuan(profit * orders);
+
+        roiStatus.classList.remove("warning", "danger");
+        if (preAdProfit <= 0) {
+          roiStatus.classList.add("danger");
+          roiStatus.textContent = "亏损：实付 GMV 已经盖不住商品和履约成本，先改价格、成本或券。";
+        } else if (profit < 0) {
+          roiStatus.classList.add("danger");
+          roiStatus.textContent = `危险：当前目标 ROI 低于保本 ROI ${breakEven.toFixed(2)}，跑量越多亏得越快。`;
+        } else if (profit / paid < 0.08) {
+          roiStatus.classList.add("warning");
+          roiStatus.textContent = `微利：当前目标 ROI 刚过保本线，建议小流量观察 CVR 和退款。`;
+        } else {
+          roiStatus.textContent = `安全：当前目标 ROI 高于保本 ROI ${breakEven.toFixed(2)}，理论上能覆盖广告费。`;
+        }
+      }
+
+      skuButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          selectedSku = button.dataset.sku;
+          salePriceInput.value = prices[selectedSku].toFixed(1);
+          skuButtons.forEach((item) => {
+            item.setAttribute("aria-pressed", String(item === button));
+          });
+          updateCalculator();
+        });
+      });
+
+      roiRange.addEventListener("input", updateCalculator);
+      couponRange.addEventListener("input", updateCalculator);
+      [
+        salePriceInput,
+        couponThresholdInput,
+        goodsCostInput,
+        shipCostInput,
+        otherCostInput,
+        targetOrdersInput
+      ].forEach((input) => input.addEventListener("input", updateCalculator));
+      updateCalculator();
+    </script>
+  </body>
+</html>
