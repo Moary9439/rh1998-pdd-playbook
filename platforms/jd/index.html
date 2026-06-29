@@ -727,7 +727,7 @@
         text-align: center;
       }
 
-      .source-note {
+      .build-note {
         border: 1px solid #ffd3a8;
         border-radius: var(--radius);
         background: var(--amber-soft);
@@ -869,8 +869,8 @@
           </div>
           <h1>京东自营经营知识库</h1>
           <p>
-            将京商圈中京东相关内容整理成学习路径、运营模块、规则风控、推广投放和文章索引。
-            本页以目录化、SOP 化和可视化方式帮助团队先建立框架，再按源站链接深入学习。
+            将京东经营主题整理成学习路径、运营模块、规则风控、推广投放和文章索引。
+            本页以目录化、SOP 化和可视化方式帮助团队先建立框架，再逐步沉淀为 RH1998 内部课程与执行页。
           </p>
           <div class="hero-actions">
             <a class="btn primary" href="#paths"><span class="icon">P</span> 看学习路径</a>
@@ -934,7 +934,7 @@
             </div>
           </div>
           <p class="notice">
-            内容说明：本页仅做原创化整理、分类和导航，不复制京商圈付费隐藏正文；需要阅读原文请通过源站链接查看。
+            内容说明：当前版本作为 RH1998 京东主题库与 SOP 框架；正文内容将以自有经验、授权材料和原创改写逐步补齐。
           </p>
         </aside>
       </section>
@@ -1079,7 +1079,7 @@
             <div>
               <p class="section-kicker">文章索引</p>
               <h2>93 条京东内容，按阶段、模块、类型快速筛选</h2>
-              <p>点击任意条目，右侧会显示它适合沉淀成什么 SOP、对应哪个阶段、以及源站阅读入口。</p>
+              <p>点击任意条目，右侧会显示它适合沉淀成什么 SOP、对应哪个阶段、需要补齐哪些执行模块。</p>
             </div>
           </div>
           <div class="index-shell">
@@ -1106,17 +1106,17 @@
               </div>
               <aside class="detail-panel" id="detailPanel">
                 <h3>选择一条内容</h3>
-                <p>左侧点击条目后，这里会显示分类、SOP 化建议、学习阶段和源站链接。</p>
+                <p>左侧点击条目后，这里会显示分类、SOP 化建议、学习阶段和内部课程建设状态。</p>
               </aside>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="source">
+      <section class="section" id="build-status">
         <div class="section-inner">
-          <div class="source-note">
-            数据来源说明：本页根据京商圈站点公开分类和文章索引整理，保留源站链接作为阅读入口。RH1998 页面只展示标题、日期、分类和原创化学习说明，不搬运付费隐藏正文。
+          <div class="build-note">
+            建设说明：京东板块将按 RH1998 的付费知识产品标准继续补齐正文、流程图、步骤卡片、检查清单、模板下载、案例拆解和风险提醒；第一版先完成主题地图、学习路径、权限字段和 SOP 化结构。
           </div>
         </div>
       </section>
@@ -1264,7 +1264,7 @@
                   ${accessTag(item)}
                 </div>
               </div>
-              <span class="tag green">${item.sourceCategory}</span>
+              <span class="tag green">${item.contentCategory}</span>
             </article>
           `)
           .join("");
@@ -1291,12 +1291,12 @@
           <div class="detail-grid">
             <div class="detail-item"><span>经营模块</span><strong>${activeItem.module}</strong></div>
             <div class="detail-item"><span>难度</span><strong>${activeItem.difficulty}</strong></div>
-            <div class="detail-item"><span>来源分类</span><strong>${activeItem.sourceCategory}</strong></div>
+            <div class="detail-item"><span>内容分类</span><strong>${activeItem.contentCategory}</strong></div>
             <div class="detail-item"><span>发布日期</span><strong>${activeItem.date}</strong></div>
             <div class="detail-item"><span>内容权限</span><strong>${accessFor(activeItem).label}</strong></div>
             <div class="detail-item"><span>下载权限</span><strong>按模板资源单独设置</strong></div>
           </div>
-          <p><strong>SOP 化建议：</strong>先保留源文阅读入口，再把关键动作改写成「适用场景、执行前提、步骤卡片、检查清单、风险提醒、关联工具」六段。</p>
+          <p><strong>SOP 化建议：</strong>先明确适用场景和执行目标，再把关键动作沉淀成「执行前提、步骤卡片、检查清单、风险提醒、关联工具、复盘记录」六段。</p>
           <div class="pill-row">
             <span class="pill">可关联学习路径</span>
             <span class="pill">可转 SOP</span>
@@ -1304,9 +1304,9 @@
             <span class="pill">可接付费状态</span>
           </div>
           <p></p>
-          <a class="btn primary" href="${activeItem.sourceUrl}" target="_blank" rel="noopener noreferrer">
-            <span class="icon">S</span>
-            打开源站链接
+          <a class="btn primary" href="#access">
+            <span class="icon">M</span>
+            查看会员建设状态
           </a>
         `;
       }

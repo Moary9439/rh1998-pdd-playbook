@@ -3,1116 +3,1023 @@ window.JD_KNOWLEDGE_ITEMS = [
     "id": "jsq-442",
     "date": "2023-01-29",
     "title": "京东自营基础运营笔记（16）——请优先提报平台活动，其次才是Shop店铺自设",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "上柜销售与活动",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/01/442.html"
+    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-449",
     "date": "2023-02-02",
     "title": "京东自营基础运营笔记（18）——Shop店铺后台设置促销权限，可按照此步骤开通",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "上柜销售与活动",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/02/449.html"
+    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-456",
     "date": "2023-02-04",
     "title": "京东自营基础运营笔记（19）——Shop店铺设置促销提示核实不到供应商是什么问题",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "上柜销售与活动",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/02/456.html"
+    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-459",
     "date": "2023-02-06",
     "title": "京东自营基础运营笔记（21）——Shop店铺申请优惠券批量上传sku遇到错误问题",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "上柜销售与活动",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/02/459.html"
+    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-477",
     "date": "2023-02-16",
     "title": "京东自营基础运营笔记（25）——京东自营销售数据以哪个为准，品牌商智？结算单？VC业绩!",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "上柜销售与活动",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/02/477.html"
+    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-499",
     "date": "2023-02-24",
     "title": "京东自营基础运营笔记（28）——使用通天塔装修活动页面",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "上柜销售与活动",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/02/499.html"
+    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-429",
     "date": "2023-01-21",
     "title": "京东自营基础运营笔记（11）——按照传统采购模式，申请下采购单",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "入仓与履约",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "入仓与履约场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/01/429.html"
+    "summary": "入仓与履约场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-432",
     "date": "2023-01-23",
     "title": "京东自营基础运营笔记（12）——按照传统模式入仓，数量少可优先用TC",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "入仓与履约",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "入仓与履约场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/01/432.html"
+    "summary": "入仓与履约场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-436",
     "date": "2023-01-25",
     "title": "京东自营基础运营笔记（13）——京东TC运费报价参考表&TC对账",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "入仓与履约",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "入仓与履约场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/01/436.html"
+    "summary": "入仓与履约场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-439",
     "date": "2023-01-27",
     "title": "京东自营基础运营笔记（15）——可上柜状态&有库存后，申请上柜销售",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "入仓与履约",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "入仓与履约场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/01/439.html"
+    "summary": "入仓与履约场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-466",
     "date": "2023-02-10",
     "title": "京东自营基础运营笔记（22）——自营厂直发货流程",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "入仓与履约",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "入仓与履约场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/02/466.html"
+    "summary": "入仓与履约场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-474",
     "date": "2023-02-14",
     "title": "京东自营基础运营笔记（24）——退货处理流程参考",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "入仓与履约",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "入仓与履约场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/02/474.html"
+    "summary": "入仓与履约场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-3913",
     "date": "2026-03-29",
     "title": "京东自营基础运营笔记（14）——京东BBCC新模式入仓",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "入仓与履约",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "入仓与履约场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2026/03/3913.html"
+    "summary": "入仓与履约场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-381",
     "date": "2023-01-01",
     "title": "京东自营基础运营笔记（1）——入驻京东自营的公司基本资质要求",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "入驻与合同",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "入驻与合同场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/01/381.html"
+    "summary": "入驻与合同场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-390",
     "date": "2023-01-05",
     "title": "京东自营基础运营笔记（3）——合作洽谈，敲定入驻关键点",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "入驻与合同",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "入驻与合同场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/01/390.html"
+    "summary": "入驻与合同场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-393",
     "date": "2023-01-07",
     "title": "京东自营基础运营笔记（4）—— 提交资料，开通Shop供应商后台（VC后台），维护相关信息",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "入驻与合同",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "入驻与合同场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/01/393.html"
+    "summary": "入驻与合同场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-396",
     "date": "2023-01-09",
     "title": "京东自营基础运营笔记（5）——后台签署合同&交保证金",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "入驻与合同",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "入驻与合同场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/01/396.html"
+    "summary": "入驻与合同场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-446",
     "date": "2023-01-31",
     "title": "京东自营基础运营笔记（17）——维护店铺资质，开通Shop店铺后台",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "入驻与合同",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "入驻与合同场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/01/446.html"
+    "summary": "入驻与合同场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-508",
     "date": "2023-03-02",
     "title": "京东自营基础运营笔记（31）——更换供应商主体&清退流程",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "入驻与合同",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "入驻与合同场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/03/508.html"
+    "summary": "入驻与合同场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-413",
     "date": "2023-01-15",
     "title": "京东自营基础运营笔记（8）——商品规划必看！！！产品sku重亏被淘汰限制问题",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "团队与经营管理",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "团队与经营管理场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/01/413.html"
+    "summary": "团队与经营管理场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-422",
     "date": "2023-01-19",
     "title": "京东自营基础运营笔记（10）——向采销申请新品，并在系统创建新品",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "增长与爆款",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/01/422.html"
+    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-495",
     "date": "2023-02-22",
     "title": "京东自营基础运营笔记（29）——如何下载京东平台无水印主图",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "增长与爆款",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/02/495.html"
+    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-408",
     "date": "2023-01-13",
     "title": "京东自营基础运营笔记（7）——与采控联系，可能还需要京东企业咚咚/京麦/京东ME下载链接",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "工具模板",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "工具模板场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/01/408.html"
+    "summary": "工具模板场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-482",
     "date": "2023-02-18",
     "title": "京东自营基础运营笔记（26）——精准通推广以及京挑客常见问题",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "推广投放",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "推广投放场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/02/482.html"
+    "summary": "推广投放场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-399",
     "date": "2023-01-11",
     "title": "京东自营基础运营笔记（6）——获取采销、采控相关工作流程标准",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "综合运营",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "综合运营场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/01/399.html"
+    "summary": "综合运营场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-463",
     "date": "2023-02-08",
     "title": "京东自营基础运营笔记（20）——有条件的，可申请开通自营售前客服",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "综合运营",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "综合运营场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/02/463.html"
+    "summary": "综合运营场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-469",
     "date": "2023-02-12",
     "title": "京东自营基础运营笔记（23）——自营厂直考试答案",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "综合运营",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "综合运营场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/02/469.html"
+    "summary": "综合运营场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-357",
     "date": "2026-03-29",
     "title": "【汇总篇】京东自营基础运营笔记",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "综合运营",
     "type": "课程目录",
     "difficulty": "入门",
-    "summary": "初级入门阶段的课程总览，可作为学习顺序和章节索引使用。",
-    "sourceUrl": "http://www.jingshangquan.com/2026/03/357.html"
+    "summary": "初级入门阶段的课程总览，可作为学习顺序和章节索引使用。"
   },
   {
     "id": "jsq-383",
     "date": "2023-01-03",
     "title": "京东自营基础运营笔记（2）——京东自营总部与区域合作模式差别",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "规则与模式变化",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "规则与模式变化场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/01/383.html"
+    "summary": "规则与模式变化场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-416",
     "date": "2023-01-17",
     "title": "京东自营基础运营笔记（9）——自营商品如何定京东价、采购价？",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "财务结算",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "财务结算场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/01/416.html"
+    "summary": "财务结算场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-502",
     "date": "2023-02-26",
     "title": "京东自营基础运营笔记（28）——自营供应商返利知识库",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "财务结算",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "财务结算场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/02/502.html"
+    "summary": "财务结算场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-505",
     "date": "2023-02-28",
     "title": "京东自营基础运营笔记（30）——确认返利单、结算单，并开发票寄送",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "初级入门",
     "module": "财务结算",
     "type": "SOP笔记",
     "difficulty": "入门",
-    "summary": "财务结算场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/02/505.html"
+    "summary": "财务结算场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-523",
     "date": "2023-04-11",
     "title": "京东自营中级运营笔记（4）——必须了解的活动与资源类型",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "上柜销售与活动",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/04/523.html"
+    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-528",
     "date": "2023-04-15",
     "title": "京东自营中级运营笔记（5）——你所不知道的坑王之王（优惠券）",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "上柜销售与活动",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/04/528.html"
+    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-541",
     "date": "2023-04-30",
     "title": "京东自营中级运营笔记（9）——如何策划活动",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "上柜销售与活动",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/04/541.html"
+    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-553",
     "date": "2023-05-05",
     "title": "京东自营中级运营笔记（11）——活动运营的核心技能是什么？",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "上柜销售与活动",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/05/553.html"
+    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-560",
     "date": "2023-05-10",
     "title": "京东自营中级运营笔记（12）——厂直销售（补单）需要注意促销折扣",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "上柜销售与活动",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/05/560.html"
+    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-636",
     "date": "2023-07-10",
     "title": "京东自营中级运营笔记（25）——快速核算单日/月度销售利润",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "上柜销售与活动",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/07/636.html"
+    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-571",
     "date": "2023-05-25",
     "title": "京东自营中级运营笔记（14）——滞销要退货，是否慌得一批",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "入仓与履约",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "入仓与履约场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/05/571.html"
+    "summary": "入仓与履约场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-574",
     "date": "2023-05-30",
     "title": "京东自营中级运营笔记（15）——自营库控规范&快速补货",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "入仓与履约",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "入仓与履约场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/05/574.html"
+    "summary": "入仓与履约场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-599",
     "date": "2023-06-10",
     "title": "京东自营中级运营笔记（18）——合同内的商品毛保&综合毛保合同详解",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "入驻与合同",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "入驻与合同场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/06/599.html"
+    "summary": "入驻与合同场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-605",
     "date": "2023-06-15",
     "title": "京东自营中级运营笔记（19）——合同外的规模返+毛保合同详解",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "入驻与合同",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "入驻与合同场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/06/605.html"
+    "summary": "入驻与合同场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-612",
     "date": "2023-06-20",
     "title": "京东自营中级运营笔记（20）——合同内的广告投放补差",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "入驻与合同",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "入驻与合同场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/06/612.html"
+    "summary": "入驻与合同场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-640",
     "date": "2023-07-15",
     "title": "京东自营中级运营笔记（26）——如何考核KPI才能最大化挖掘出员工的潜力？",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "团队与经营管理",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "团队与经营管理场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/07/640.html"
+    "summary": "团队与经营管理场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-644",
     "date": "2023-07-20",
     "title": "京东自营中级运营笔记（27）——身为店长的你，如何运筹帷幄、把控全局？",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "团队与经营管理",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "团队与经营管理场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/07/644.html"
+    "summary": "团队与经营管理场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-649",
     "date": "2023-07-25",
     "title": "京东自营中级运营笔记（28）——京东自营业务操盘手册",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "团队与经营管理",
     "type": "资料手册",
     "difficulty": "中等",
-    "summary": "团队与经营管理相关资料入口，可作为规则查阅、活动报名或操作手册的索引。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/07/649.html"
+    "summary": "团队与经营管理相关资料入口，可作为规则查阅、活动报名或操作手册的索引。"
   },
   {
     "id": "jsq-655",
     "date": "2023-07-30",
     "title": "京东自营中级运营笔记（29）——常见业务问题解答-持续更新",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "团队与经营管理",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "团队与经营管理场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/07/655.html"
+    "summary": "团队与经营管理场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-536",
     "date": "2023-04-21",
     "title": "京东自营中级运营笔记（7）——提升GMV途径：流量、转化率",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "增长与爆款",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/04/536.html"
+    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-539",
     "date": "2023-04-25",
     "title": "京东自营中级运营笔记（8）——必备技能之爆品运营",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "增长与爆款",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/04/539.html"
+    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-546",
     "date": "2023-05-01",
     "title": "京东自营中级运营笔记（10）——商品运营不只是简单的上新品！",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "增长与爆款",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/05/546.html"
+    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-533",
     "date": "2023-04-20",
     "title": "京东自营中级运营笔记（6）——京东广告双记政策",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "推广投放",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "推广投放场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/04/533.html"
+    "summary": "推广投放场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-516",
     "date": "2023-04-01",
     "title": "京东自营中级运营笔记（1）——京东与淘系的经营方向选择",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "综合运营",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "综合运营场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/04/516.html"
+    "summary": "综合运营场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-521",
     "date": "2023-04-10",
     "title": "京东自营中级运营笔记（3）——京东自营的地位",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "综合运营",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "综合运营场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/04/521.html"
+    "summary": "综合运营场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-569",
     "date": "2023-05-20",
     "title": "京东自营中级运营笔记（13）——动销平衡，争取资金利用率最大化",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "综合运营",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "综合运营场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/05/569.html"
+    "summary": "综合运营场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-583",
     "date": "2023-06-01",
     "title": "京东自营中级运营笔记（16）——大佬们竟然还能这么玩",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "综合运营",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "综合运营场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/06/583.html"
+    "summary": "综合运营场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-362",
     "date": "2024-06-14",
     "title": "【汇总篇】京东自营中级运营笔记",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "综合运营",
     "type": "课程目录",
     "difficulty": "中等",
-    "summary": "中级操盘阶段的课程总览，可作为学习顺序和章节索引使用。",
-    "sourceUrl": "http://www.jingshangquan.com/2024/06/362.html"
+    "summary": "中级操盘阶段的课程总览，可作为学习顺序和章节索引使用。"
   },
   {
     "id": "jsq-518",
     "date": "2023-04-05",
     "title": "京东自营中级运营笔记（2）——京东自营有几种模式？",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "规则与模式变化",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "规则与模式变化场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/04/518.html"
+    "summary": "规则与模式变化场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-596",
     "date": "2023-06-05",
     "title": "京东自营中级运营笔记（17）——规模返利、定额费用&其他返利类型介绍",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "财务结算",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "财务结算场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/06/596.html"
+    "summary": "财务结算场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-619",
     "date": "2023-06-25",
     "title": "京东自营中级运营笔记（21）——为什么要对结算逻辑非常清楚",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "财务结算",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "财务结算场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/06/619.html"
+    "summary": "财务结算场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-627",
     "date": "2023-06-30",
     "title": "京东自营中级运营笔记（22）——白亏了那多钱，还不知道供货价的重要性",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "财务结算",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "财务结算场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/06/627.html"
+    "summary": "财务结算场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-630",
     "date": "2023-07-01",
     "title": "京东自营中级运营笔记（23）——返利费用开票方的不同有什么影响",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "财务结算",
     "type": "SOP笔记",
     "difficulty": "中等",
-    "summary": "财务结算场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/07/630.html"
+    "summary": "财务结算场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-633",
     "date": "2023-07-05",
     "title": "京东自营中级运营笔记（24）——方便快捷，京东自营毛保计算器",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "中级操盘",
     "module": "财务结算",
     "type": "工具模板",
     "difficulty": "中等",
-    "summary": "财务结算相关工具或模板线索，适合沉淀为可下载模型或操作表。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/07/633.html"
+    "summary": "财务结算相关工具或模板线索，适合沉淀为可下载模型或操作表。"
   },
   {
     "id": "jsq-684",
     "date": "2023-11-11",
     "title": "京东自营高级运营笔记（9）——真假补贴活动鉴别（优惠券）",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "高级增长",
     "module": "上柜销售与活动",
     "type": "SOP笔记",
     "difficulty": "进阶",
-    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/11/684.html"
+    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-2579",
     "date": "2025-06-18",
     "title": "京东自营高级运营笔记（16）——S级活动操盘策略",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "高级增长",
     "module": "上柜销售与活动",
     "type": "SOP笔记",
     "difficulty": "进阶",
-    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2025/06/2579.html"
+    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-3282",
     "date": "2025-10-10",
     "title": "京东自营高级运营笔记（10）——真假补贴活动鉴别（国补）",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "高级增长",
     "module": "上柜销售与活动",
     "type": "SOP笔记",
     "difficulty": "进阶",
-    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2025/10/3282.html"
+    "summary": "上柜销售与活动场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-675",
     "date": "2022-08-01",
     "title": "京东自营高级运营笔记（4）——京东搜索规则｜了解搜索逻辑，不让爆款输在起跑线！",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "高级增长",
     "module": "增长与爆款",
     "type": "SOP笔记",
     "difficulty": "进阶",
-    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2022/08/675.html"
+    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-678",
     "date": "2022-08-05",
     "title": "京东自营高级运营笔记（8）——快速积累评价方案",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "高级增长",
     "module": "增长与爆款",
     "type": "SOP笔记",
     "difficulty": "进阶",
-    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2022/08/678.html"
+    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-700",
     "date": "2022-11-10",
     "title": "京东自营高级运营笔记（13）——爆款打造方法论 | “拼价格”打法策略案例分享（1）-无敌券",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "高级增长",
     "module": "增长与爆款",
     "type": "案例拆解",
     "difficulty": "进阶",
-    "summary": "围绕增长与爆款的打法案例，可进一步拆成背景、动作、结果、风险和复盘结论。",
-    "sourceUrl": "http://www.jingshangquan.com/2022/11/700.html"
+    "summary": "围绕增长与爆款的打法案例，可进一步拆成背景、动作、结果、风险和复盘结论。"
   },
   {
     "id": "jsq-707",
     "date": "2023-09-11",
     "title": "京东自营高级运营笔记（14）——爆款打造方法论 | “拼价格”打法策略案例分享（2）-无影手",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "高级增长",
     "module": "增长与爆款",
     "type": "案例拆解",
     "difficulty": "进阶",
-    "summary": "围绕增长与爆款的打法案例，可进一步拆成背景、动作、结果、风险和复盘结论。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/09/707.html"
+    "summary": "围绕增长与爆款的打法案例，可进一步拆成背景、动作、结果、风险和复盘结论。"
   },
   {
     "id": "jsq-669",
     "date": "2024-01-05",
     "title": "京东自营高级运营笔记（1）——京东品牌商智行业指数换算方式探究",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "高级增长",
     "module": "增长与爆款",
     "type": "SOP笔记",
     "difficulty": "进阶",
-    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2024/01/669.html"
+    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-690",
     "date": "2024-03-15",
     "title": "京东自营高级运营笔记（11）——运营策略｜爆款打造方法论",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "高级增长",
     "module": "增长与爆款",
     "type": "SOP笔记",
     "difficulty": "进阶",
-    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2024/03/690.html"
+    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-2984",
     "date": "2025-01-01",
     "title": "京东自营高级运营笔记（2）——市场分析｜通过数据研究市场趋势/竞争环境/客户需求，选择类目",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "高级增长",
     "module": "增长与爆款",
     "type": "SOP笔记",
     "difficulty": "进阶",
-    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2025/01/2984.html"
+    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-1785",
     "date": "2025-04-05",
     "title": "京东自营高级运营笔记（5）——京东流量路径｜了解流量来源，尽可能提高流量",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "高级增长",
     "module": "增长与爆款",
     "type": "SOP笔记",
     "difficulty": "进阶",
-    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2025/04/1785.html"
+    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-3024",
     "date": "2025-05-02",
     "title": "京东自营高级运营笔记（6）——京东采销视角｜新品打爆全流程逻辑",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "高级增长",
     "module": "增长与爆款",
     "type": "SOP笔记",
     "difficulty": "进阶",
-    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2025/05/3024.html"
+    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-1623",
     "date": "2025-05-07",
     "title": "京东自营高级运营笔记（7）——文描最优化｜主图&详情设计思维",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "高级增长",
     "module": "增长与爆款",
     "type": "SOP笔记",
     "difficulty": "进阶",
-    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2025/05/1623.html"
+    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-2912",
     "date": "2025-09-01",
     "title": "京东自营高级运营笔记（3）——商品核心竞争力|品牌力/产品力/营销力",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "高级增长",
     "module": "增长与爆款",
     "type": "SOP笔记",
     "difficulty": "进阶",
-    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。",
-    "sourceUrl": "http://www.jingshangquan.com/2025/09/2912.html"
+    "summary": "增长与爆款场景下的操作笔记，适合改写为步骤卡片、检查清单和风险提示。"
   },
   {
     "id": "jsq-3611",
     "date": "2026-02-25",
     "title": "京东自营高级运营笔记（12）——爆款打造方法论 | “拼资源”打法策略案例分享-野路子",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "高级增长",
     "module": "增长与爆款",
     "type": "案例拆解",
     "difficulty": "进阶",
-    "summary": "围绕增长与爆款的打法案例，可进一步拆成背景、动作、结果、风险和复盘结论。",
-    "sourceUrl": "http://www.jingshangquan.com/2026/02/3611.html"
+    "summary": "围绕增长与爆款的打法案例，可进一步拆成背景、动作、结果、风险和复盘结论。"
   },
   {
     "id": "jsq-2760",
     "date": "2025-06-15",
     "title": "京东自营高级运营笔记（15）——“拼产品特色”打法策略案例分享-产品差异化",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "高级增长",
     "module": "综合运营",
     "type": "案例拆解",
     "difficulty": "进阶",
-    "summary": "围绕综合运营的打法案例，可进一步拆成背景、动作、结果、风险和复盘结论。",
-    "sourceUrl": "http://www.jingshangquan.com/2025/06/2760.html"
+    "summary": "围绕综合运营的打法案例，可进一步拆成背景、动作、结果、风险和复盘结论。"
   },
   {
     "id": "jsq-365",
     "date": "2026-03-29",
     "title": "【汇总篇】京东自营高级运营笔记",
-    "sourceCategory": "京东运营",
+    "contentCategory": "京东运营",
     "stage": "高级增长",
     "module": "综合运营",
     "type": "课程目录",
     "difficulty": "进阶",
-    "summary": "高级增长阶段的课程总览，可作为学习顺序和章节索引使用。",
-    "sourceUrl": "http://www.jingshangquan.com/2026/03/365.html"
+    "summary": "高级增长阶段的课程总览，可作为学习顺序和章节索引使用。"
   },
   {
     "id": "jsq-718",
     "date": "2024-01-01",
     "title": "2024年京东秒杀白皮书",
-    "sourceCategory": "京东规则",
+    "contentCategory": "京东规则",
     "stage": "规则风控",
     "module": "上柜销售与活动",
     "type": "资料手册",
     "difficulty": "中等",
-    "summary": "上柜销售与活动相关资料入口，可作为规则查阅、活动报名或操作手册的索引。",
-    "sourceUrl": "http://www.jingshangquan.com/2024/01/718.html"
+    "summary": "上柜销售与活动相关资料入口，可作为规则查阅、活动报名或操作手册的索引。"
   },
   {
     "id": "jsq-721",
     "date": "2024-01-02",
     "title": "2024年京东小魔方新品孵化白皮书",
-    "sourceCategory": "京东规则",
+    "contentCategory": "京东规则",
     "stage": "规则风控",
     "module": "上柜销售与活动",
     "type": "资料手册",
     "difficulty": "中等",
-    "summary": "上柜销售与活动相关资料入口，可作为规则查阅、活动报名或操作手册的索引。",
-    "sourceUrl": "http://www.jingshangquan.com/2024/01/721.html"
+    "summary": "上柜销售与活动相关资料入口，可作为规则查阅、活动报名或操作手册的索引。"
   },
   {
     "id": "jsq-724",
     "date": "2023-10-22",
     "title": "京东平台的神操作（1）——拓展品类RDC仓，加收内配费，降低京东自身运营成本",
-    "sourceCategory": "京东规则",
+    "contentCategory": "京东规则",
     "stage": "规则风控",
     "module": "入仓与履约",
     "type": "规则提醒",
     "difficulty": "中等",
-    "summary": "围绕入仓与履约的规则变化、费用风险或平台机制提醒，适合做经营避坑清单。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/10/724.html"
+    "summary": "围绕入仓与履约的规则变化、费用风险或平台机制提醒，适合做经营避坑清单。"
   },
   {
     "id": "jsq-729",
     "date": "2024-04-23",
     "title": "京东平台的神操作（2）——自营商家送货数量不准和不及时，会罚款！！",
-    "sourceCategory": "京东规则",
+    "contentCategory": "京东规则",
     "stage": "规则风控",
     "module": "入仓与履约",
     "type": "规则提醒",
     "difficulty": "中等",
-    "summary": "围绕入仓与履约的规则变化、费用风险或平台机制提醒，适合做经营避坑清单。",
-    "sourceUrl": "http://www.jingshangquan.com/2024/04/729.html"
+    "summary": "围绕入仓与履约的规则变化、费用风险或平台机制提醒，适合做经营避坑清单。"
   },
   {
     "id": "jsq-977",
     "date": "2024-06-27",
     "title": "京东VMI模式操作手册",
-    "sourceCategory": "京东规则",
+    "contentCategory": "京东规则",
     "stage": "规则风控",
     "module": "入仓与履约",
     "type": "资料手册",
     "difficulty": "中等",
-    "summary": "入仓与履约相关资料入口，可作为规则查阅、活动报名或操作手册的索引。",
-    "sourceUrl": "http://www.jingshangquan.com/2024/06/977.html"
+    "summary": "入仓与履约相关资料入口，可作为规则查阅、活动报名或操作手册的索引。"
   },
   {
     "id": "jsq-1247",
     "date": "2024-07-25",
     "title": "京东平台的神操作（3）——京东备件库退货开始收取商家费用",
-    "sourceCategory": "京东规则",
+    "contentCategory": "京东规则",
     "stage": "规则风控",
     "module": "入仓与履约",
     "type": "规则提醒",
     "difficulty": "中等",
-    "summary": "围绕入仓与履约的规则变化、费用风险或平台机制提醒，适合做经营避坑清单。",
-    "sourceUrl": "http://www.jingshangquan.com/2024/07/1247.html"
+    "summary": "围绕入仓与履约的规则变化、费用风险或平台机制提醒，适合做经营避坑清单。"
   },
   {
     "id": "jsq-990",
     "date": "2023-10-28",
     "title": "京东排行榜白皮书-2023年10月",
-    "sourceCategory": "京东规则",
+    "contentCategory": "京东规则",
     "stage": "规则风控",
     "module": "增长与爆款",
     "type": "资料手册",
     "difficulty": "中等",
-    "summary": "增长与爆款相关资料入口，可作为规则查阅、活动报名或操作手册的索引。",
-    "sourceUrl": "http://www.jingshangquan.com/2023/10/990.html"
+    "summary": "增长与爆款相关资料入口，可作为规则查阅、活动报名或操作手册的索引。"
   },
   {
     "id": "jsq-1267",
     "date": "2024-08-09",
     "title": "京东pop店铺修改颜色尺码sku的变化规则",
-    "sourceCategory": "京东规则",
+    "contentCategory": "京东规则",
     "stage": "规则风控",
     "module": "规则与模式变化",
     "type": "规则提醒",
     "difficulty": "中等",
-    "summary": "围绕规则与模式变化的规则变化、费用风险或平台机制提醒，适合做经营避坑清单。",
-    "sourceUrl": "http://www.jingshangquan.com/2024/08/1267.html"
+    "summary": "围绕规则与模式变化的规则变化、费用风险或平台机制提醒，适合做经营避坑清单。"
   },
   {
     "id": "jsq-3587",
     "date": "2026-01-15",
     "title": "京东平台的神操作（5）——POP和自营sku互转",
-    "sourceCategory": "京东规则",
+    "contentCategory": "京东规则",
     "stage": "规则风控",
     "module": "规则与模式变化",
     "type": "规则提醒",
     "difficulty": "中等",
-    "summary": "围绕规则与模式变化的规则变化、费用风险或平台机制提醒，适合做经营避坑清单。",
-    "sourceUrl": "http://www.jingshangquan.com/2026/01/3587.html"
+    "summary": "围绕规则与模式变化的规则变化、费用风险或平台机制提醒，适合做经营避坑清单。"
   },
   {
     "id": "jsq-4248",
     "date": "2026-04-08",
     "title": "京东平台的神操作（6）——京东POP商品可以打自营标了",
-    "sourceCategory": "京东规则",
+    "contentCategory": "京东规则",
     "stage": "规则风控",
     "module": "规则与模式变化",
     "type": "规则提醒",
     "difficulty": "中等",
-    "summary": "围绕规则与模式变化的规则变化、费用风险或平台机制提醒，适合做经营避坑清单。",
-    "sourceUrl": "http://www.jingshangquan.com/2026/04/4248.html"
+    "summary": "围绕规则与模式变化的规则变化、费用风险或平台机制提醒，适合做经营避坑清单。"
   },
   {
     "id": "jsq-3582",
     "date": "2026-01-14",
     "title": "京东平台的神操作（4）——自营被加收订单交易服务费",
-    "sourceCategory": "京东规则",
+    "contentCategory": "京东规则",
     "stage": "规则风控",
     "module": "财务结算",
     "type": "规则提醒",
     "difficulty": "中等",
-    "summary": "围绕财务结算的规则变化、费用风险或平台机制提醒，适合做经营避坑清单。",
-    "sourceUrl": "http://www.jingshangquan.com/2026/01/3582.html"
+    "summary": "围绕财务结算的规则变化、费用风险或平台机制提醒，适合做经营避坑清单。"
   },
   {
     "id": "jsq-4180",
     "date": "2026-03-30",
     "title": "京东平台的神操作（5）——自营加收0.6%的交易服务费",
-    "sourceCategory": "京东规则",
+    "contentCategory": "京东规则",
     "stage": "规则风控",
     "module": "财务结算",
     "type": "规则提醒",
     "difficulty": "中等",
-    "summary": "围绕财务结算的规则变化、费用风险或平台机制提醒，适合做经营避坑清单。",
-    "sourceUrl": "http://www.jingshangquan.com/2026/03/4180.html"
+    "summary": "围绕财务结算的规则变化、费用风险或平台机制提醒，适合做经营避坑清单。"
   },
   {
     "id": "jsq-374",
     "date": "2022-07-20",
     "title": "京东站内推广干货篇",
-    "sourceCategory": "京东推广",
+    "contentCategory": "京东推广",
     "stage": "推广投放",
     "module": "推广投放",
     "type": "推广方法",
     "difficulty": "中等",
-    "summary": "京东站内投放和人群设置相关内容，可转化为投放 SOP 与检查清单。",
-    "sourceUrl": "http://www.jingshangquan.com/2022/07/374.html"
+    "summary": "京东站内投放和人群设置相关内容，可转化为投放 SOP 与检查清单。"
   },
   {
     "id": "jsq-377",
     "date": "2022-07-25",
     "title": "京东快车DMP人群怎么设置？",
-    "sourceCategory": "京东推广",
+    "contentCategory": "京东推广",
     "stage": "推广投放",
     "module": "推广投放",
     "type": "推广方法",
     "difficulty": "中等",
-    "summary": "京东站内投放和人群设置相关内容，可转化为投放 SOP 与检查清单。",
-    "sourceUrl": "http://www.jingshangquan.com/2022/07/377.html"
+    "summary": "京东站内投放和人群设置相关内容，可转化为投放 SOP 与检查清单。"
   }
 ];
